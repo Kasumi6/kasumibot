@@ -239,7 +239,7 @@ ban.kick().then(member => {
                 message.channel.send(ban_embed)
                 })
         }
-        if(message.content.includes("ar!serverinfo")){
+        if(message.content.includes("PN!serverinfo")){
             let serverinfo = new Discord.RichEmbed()
             .setTitle(`${message.guild} informations !`)
             .setColor("E46525")
