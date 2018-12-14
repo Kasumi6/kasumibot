@@ -11,6 +11,27 @@ function random(min, max){
 client.on("ready", () => {
     console.log(`${client.user.tag} prêt pour le carnage`)
     client.user.setActivity(`ar!help | By Kasumi`,{type:"WATCHING"})
+    console.log('')
+    console.log('')
+    console.log('╔[═════════════════════════════════════════════════════════════════]╗')
+    console.log(`[Start] ${new Date()}`);
+    console.log('╚[═════════════════════════════════════════════════════════════════]╝')
+    console.log('')
+    console.log('╔[════════════════════════════════════]╗');
+    console.log(`Connecté sur * [ " ${client.user.username} " ]`);
+    console.log('')
+    console.log('Informations :')
+    console.log('')
+    console.log(`servers ! [ " ${client.guilds.size} " ]`);
+    console.log(`Users ! [ " ${client.users.size} " ]`);
+    console.log(`channels ! [ " ${client.channels.size} " ]`);
+    console.log('╚[════════════════════════════════════]╝')
+    console.log('')
+    console.log('╔[════════════]╗')
+    console.log(' Bot Is Online ')
+    console.log('╚[════════════]╝')
+    console.log('')
+    console.log('')
     })
 client.on("message", message => {
   if(message.content === "ar!help"){
@@ -180,18 +201,16 @@ ban.kick().then(member => {
     message.channel.send(`Merci ${message.member.user} pour cette blague de merde`)
     console.log(`peppa ping par ${message.author.username + "#" + message.author.discriminator}`)
   }
-if (message.content.startsWith("ar!clear")){
-    if (message.channel.type === "dm") return;
-    if (!message.guild.member(message.author).hasPermission("MANAGE_CHANNELS")) return message.reply("vous n'avez pas la permission !")
-    async function clear() {
-        message.delete();
-        const fetched = await message.channel.fetchMessages({limit: 99});
-        message.channel.bulkDelete(fetched);
-    }
-    clear();
-    console.log(`clear par ${message.author.username + "#" + message.author.discriminator}`)
-}
+  if(message.content.startsWith("ar!clear")) {
+    if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return message.channel.send("Vous n'avez pas la permissions !");
 
+    let args = message.content.split(" ").slice(1);
+
+    if(!args[0]) return message.channel.send("Tu dois préciser un nombre de messags à surpprimer !")
+    message.channel.bulkDelete(args[0]).then(() => {
+        message.channel.send(`${args[0]} messages ont été surpprimés !:recycle:`).then(msg => msg.delete(2000));
+    })
+}
 
   if(message.content.startsWith("ar!info")) {
     var memberavatar = message.author.avatarURL
