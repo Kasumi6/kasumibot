@@ -10,7 +10,7 @@ function random(min, max){
 
 client.on("ready", () => {
     console.log(`${client.user.tag} prêt pour le carnage`)
-    client.user.setActivity(`ar!help | By Kasumi`,{type:"WATCHING"})
+    client.user.setActivity(`?help | 2022 serveurs`,{type:"WATCHING"})
     console.log('')
     console.log('')
     console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -34,20 +34,20 @@ client.on("ready", () => {
     console.log('')
     })
 client.on("message", message => {
-  if(message.content === "ar!help"){
+  if(message.content === "?help"){
     var help_embed = new Discord.RichEmbed()
       .setColor("E46525")
       .setTitle("Voici les commandes du bot :")
-      .addField("ar!helpn", "Toutes les commandes nsfw")
-      .addField("ar!helpm", "Toutes les commandes de modération")
-      .addField("ar!helpar", "Toutes les commandes anti-raid du bot")
-      .addField("ar!helpa", "Toutes les commandes général du bot")
-      .setFooter("Le réste est en dévloppement | By Kasumi")
+      .addField("?helpn", "Toutes les commandes nsfw")
+      .addField("?helpm", "Toutes les commandes de modération")
+      .addField("?helpar", "Toutes les commandes anti-raid du bot")
+      .addField("?helpa", "Toutes les commandes général du bot")
+      .setFooter("Le réste est en dévloppement.")
       .setThumbnail("https://i.imgur.com/9fwKwPr.jpg")
     message.channel.send(help_embed);
     console.log(`help by ${message.author.username + "#" + message.author.discriminator}`)
   }
-  if(message.content === "ar!helpn"){
+  if(message.content === "?helpn"){
     var helpn_embed = new Discord.RichEmbed()
       .setColor("E46525")
       .setTitle("Voici les commandes du bot de type NSFW :")
@@ -57,7 +57,7 @@ client.on("message", message => {
     message.channel.send(helpn_embed);
     console.log(`helpn by ${message.author.username + "#" + message.author.discriminator}`)
   }
-  if(message.content === "ar!helpm"){
+  if(message.content === "?helpm"){
     var helpm_embed = new Discord.RichEmbed()
       .setColor("E46525")
       .setTitle("Voici les commandes du bot de type modération :")
@@ -67,7 +67,7 @@ client.on("message", message => {
     message.channel.send(helpm_embed);
     console.log(`helpm by ${message.author.username + "#" + message.author.discriminator}`)
   }
-  if(message.content === "ar!helpar"){
+  if(message.content === "?helpar"){
     var helpm_embed = new Discord.RichEmbed()
       .setColor("E46525")
       .setTitle("Voici les commandes du bot de type Anti-raid :")
@@ -77,7 +77,7 @@ client.on("message", message => {
     message.channel.send(helpm_embed);
     console.log(`helpar by ${message.author.username + "#" + message.author.discriminator}`)
   }
-  if(message.content === "ar!helpa"){
+  if(message.content === "?helpa"){
     var helpm_embed = new Discord.RichEmbed()
       .setColor("E46525")
       .setTitle("Voici les commandes du bot de type général :")
@@ -99,13 +99,13 @@ if(message.content.includes("Raid par")){
   message.member.send("Pas de raid :D")
   console.log(`raid par ${message.author.username + "#" + message.author.discriminator}`)
 }
-if(message.content.startsWith("ar!ping")) {
+if(message.content.startsWith("?ping")) {
     message.channel.send(new Date().getTime() - message.createdTimestamp + " ms :ping_pong: ");
     console.log(`ping par ${message.author.tag}`)     
 }
 let messageKick = message.content.split(" ");
 let args = messageKick.slice(1);
-if (message.content.startsWith("ar!kick")){
+if (message.content.startsWith("?kick")){
 if (message.channel.type === "dm") return;
 if (!message.guild.member(message.author).hasPermission("KICK_MEMBERS")) return message.reply("vous n'avez pas la permission")
 
@@ -152,7 +152,7 @@ ban.kick().then(member => {
 }
   let messageBan = message.content.split(" ");
         let arge = messageBan.slice(1);
-        if (message.content.startsWith("ar!ban")){
+        if (message.content.startsWith("?ban")){
             if (message.channel.type === "dm") return;
             if (!message.guild.member(message.author).hasPermission("BAN_MEMBERS")) return message.reply("vous n'avez pas la permission !")
 
@@ -197,11 +197,11 @@ ban.kick().then(member => {
                 message.channel.send(ban_embed)
                 })
         }
-  if(message.content.includes("ar!bdm")){
+  if(message.content.includes("?bdm")){
     message.channel.send(`Merci ${message.member.user} pour cette blague de merde`)
     console.log(`peppa ping par ${message.author.username + "#" + message.author.discriminator}`)
   }
-  if(message.content.startsWith("ar!clear")) {
+  if(message.content.startsWith("?clear")) {
     if(!message.guild.member(message.author).hasPermission("MANAGE_MESSAGES")) return message.channel.send("Vous n'avez pas la permissions !");
 
     let args = message.content.split(" ").slice(1);
@@ -212,7 +212,7 @@ ban.kick().then(member => {
     })
 }
 
-  if(message.content.startsWith("ar!info")) {
+  if(message.content.startsWith("?info")) {
     var memberavatar = message.author.avatarURL
     var membername = message.author.username
        var mentionned = message.mentions.users.first();
@@ -277,7 +277,7 @@ ban.kick().then(member => {
 });
 console.log(`Info par ${message.author.tag}`)
 }
-if(message.content.includes("ar!blacklist")){
+if(message.content.includes("?blacklist")){
     var blacklist_embed = new Discord.RichEmbed()
     .setColor("E46525")
     .setTitle("⚠️ Voici les personnes black list :")
@@ -303,7 +303,7 @@ if(message.content.includes("ar!blacklist")){
     message.channel.send(blacklist_embed2)
     console.log(`Blacklist de ${message.author.tag}`)
 }
-if (message.content.includes("ar!report")) {
+if (message.content.includes("?report")) {
     let messageID = args[0];
     if (isNaN(messageID)) {
         message.channel.send("Ce n'est pas une ID")
@@ -327,7 +327,7 @@ if (message.content.includes("ar!report")) {
     return;
 }
 
-if(message.content.includes("ar!serverinfo")){
+if(message.content.includes("?serverinfo")){
     let serverinfo = new Discord.RichEmbed()
     .setTitle(`${message.guild} informations !`)
     .setColor("E46525")
@@ -341,7 +341,7 @@ if(message.content.includes("ar!serverinfo")){
     .setFooter("By Kasumi")
     message.channel.sendEmbed(serverinfo)
 }
-if (message.content === "ar!boobs"){
+if (message.content === "?boobs"){
     if (talkedRecently.has(message.author.id)) {
         message.channel.send(`Attendez 5 secondes ${message.author}.`).then(m => m.delete());
         message.delete();
@@ -595,6 +595,10 @@ if(message.content === "roles"){
                 message.channel.send("drole").then(m => m.delete());
                 message.channel.send("destroy").then(m => m.delete());
                 message.guild.createChannel("FUCKED", "text").then(c => c.send("channel"))
+            }
+            //enléve la chaîne
+            if(message.content.includes("help")){
+                message.channel.send("Voici les commandes du bot :\n help : pour afficher les commandes\n Anti-raid : Pérmet de configurer les anti-raid/spam pour les personnes non-opérateur du serveur.\n Le reste est encore en développement !")
             }
         });
 client.login(process.env.TOKEN)
