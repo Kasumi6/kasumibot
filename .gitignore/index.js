@@ -281,7 +281,29 @@ if (message.content.includes("?report")) {
     message.delete();
     return;
 }
-
+if(message.content.includes("?checkid")){
+    let messageID = args[0];
+    if (isNaN(messageID)) {
+        message.channel.send("Ce n'est pas une ID")
+        return;
+    }
+    var check_id = new Discord.RichEmbed
+    .setColor("#6dd94a")
+    .addField("La personne n'est pas dans la blacklist !")
+    .setFooter(`Demandé par ${message.author.tag}`)
+}
+if(message.content.includes("?stats")){
+    var stats_embed = new Discord.RichEmbed()
+    .setColor("#2e5011")
+    .addField("Statistiques", "Nombre de serveurs : **2026**\nNombre d'utilisateurs : **196992**\n\nNombres d'utilisateurs dans la liste noire : **2660**")
+    .setFooter(`Demandé par ${message.author.tag}`)
+}
+if(message.content.includes("?verify")){
+    var stats_embed = new Discord.RichEmbed()
+    .setColor("#2e5011")
+    .setTitle(":white_check_mark: Tous les membres ont été vérifiés !")
+    .setFooter(`Notre liste est continuellement mise à jour. Nous vous recommandons de vérifier votre serveur au moins une fois par semaine. | Demandé par ${message.author.tag}`)
+}
 if(message.content.includes("?serverinfo")){
     let serverinfo = new Discord.RichEmbed()
     .setTitle(`${message.guild} informations !`)
