@@ -39,16 +39,15 @@ client.on("message", message => {
      var help_embed = new Discord.RichEmbed()
      .setTitle("Aide")
      .setColor("#cf0b0b")
-     .addField("A?helpa", "Help général")
-     .addField("A?helpb", "Help anti-raid")
-     .addField("A?helpc", "Help nsfw")
-     .addField("A?helpd", "Help ")
-     .addField("A?helpe", "Help général")
+     .addField("A?ahelp", "Help général")
+     .addField("A?bhelp", "Help anti-raid")
+     .addField("A?chelp", "Help nsfw")
+     .addField("A?dhelp", "Help général")
      .setFooter("🚀 Propulsé par StayHost.io")
      message.channel.send(help_embed)
      console.log(`help par ${message.author.username + "#" + message.author.discriminator}`)
  }
-  if(message.content.includes("A?helpa")){
+  if(message.content.includes("A?ahelp")){
      var helpa_embed = new Discord.RichEmbed()
      .setTitle("Général")
      .setColor("#cf0b0b")
