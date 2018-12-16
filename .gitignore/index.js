@@ -9,7 +9,7 @@ function random(min, max){
 }
 
 client.on("ready", () => {
-    client.user.setActivity(`?help | 2026 serveurs`,{type:"PLAYING"})
+    client.user.setActivity(`A?help | 26 serveurs`,{type:"PLAYING"})
     console.log('')
     console.log('')
     console.log('╔[═════════════════════════════════════════════════════════════════]╗')
