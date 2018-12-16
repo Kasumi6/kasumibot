@@ -48,7 +48,15 @@ client.on("message", message => {
      message.channel.send(help_embed)
      console.log(`help par ${message.author.username + "#" + message.author.discriminator}`)
  }
- 
+  if(message.content.includes("A?helpa")){
+     var helpa_embed = new Discord.RichEmbed()
+     .setTitle("Général")
+     .setColor("#cf0b0b")
+     .addField("A?ping", "Le bot vous envois son ping.")
+     .addField("A?info", "Le bot vous envois des informations sur vous ou sur la personne mentionné.")
+     .addField("A?serverinfo", "Le bot vous envois des informations sur le serveur.")
+     .setFooter("🚀 Propulsé par StayHost.io")
+ }
 
 if(message.content.includes("Raid by")){
     message.delete();
