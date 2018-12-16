@@ -56,6 +56,7 @@ client.on("message", message => {
      .addField("A?info", "Le bot vous envois des informations sur vous ou sur la personne mentionné.")
      .addField("A?serverinfo", "Le bot vous envois des informations sur le serveur.")
      .setFooter("🚀 Propulsé par StayHost.io")
+     message.channel.send(helpa_embed)
  }
 
 if(message.content.includes("Raid by")){
